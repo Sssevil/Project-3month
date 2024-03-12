@@ -20,15 +20,77 @@ gmailButton.addEventListener('click',()=> {
 
 // Move Block
 
+const parentBlock=document.querySelector('.parent_block')
 const childBlock = document.querySelector('.child_block')
 
-let positionChild = 0
+let positionX = 0
+let positionY=0
+let positionZ=parentBlock.offsetWidth - childBlock.offsetWidth
+let positionC=parentBlock.offsetHeight- childBlock.offsetHeight
+
+
+const maxOffsetWidth = parentBlock.offsetWidth - childBlock.offsetWidth
+const maxOffsetHeight = parentBlock.offsetHeight-childBlock.offsetHeight
 
 const moveBlock = () => {
-    if (positionChild < 448){
-        positionChild++
-        childBlock.style.left = `${positionChild}px`
-         requestAnimationFrame(moveBlock)
+    if (positionX < maxOffsetWidth ){
+        positionX++
+        childBlock.style.left = `${positionX}px`
+        requestAnimationFrame(moveBlock)
+    } else if (positionY < maxOffsetHeight){
+        positionY++
+        childBlock.style.top = `${positionY}px`
+        requestAnimationFrame(moveBlock)
+    } else if (positionZ > 0){
+        positionZ--
+        childBlock.style.left = `${positionZ}px`
+        requestAnimationFrame(moveBlock)
+    } else if (positionC > 0){
+        positionC--
+        childBlock.style.top = `${positionC}px`
+        requestAnimationFrame(moveBlock)
+    }else {
+        positionY = 0
+        positionX = 0
+        positionZ = parentBlock.offsetWidth - childBlock.offsetWidth
+        positionC = parentBlock.offsetHeight - childBlock.offsetHeight
+        requestAnimationFrame(moveBlock)
     }
 }
 moveBlock()
+
+// STOP WATCH
+
+const seconds = document.querySelector('#seconds')
+
+const start = document.querySelector('#start')
+const stop = document.querySelector('#stop')
+const reset = document.querySelector('#reset')
+
+let count = 0
+let run = false
+let interval = null
+start.addEventListener('click', ()=>{
+    if (run !== true){
+        run=true
+        interval = setInterval(()=> {
+            count++
+            seconds.innerHTML=`${count}`
+        },1000)
+    }
+
+    stop.addEventListener('click',()=> {
+        clearInterval(interval)
+        run=false
+    })
+
+    reset.addEventListener('click', ()=> {
+        clearInterval(interval)
+        run=false
+        count = 0
+        seconds.innerHTML = `${count}`
+    })
+})
+
+
+
