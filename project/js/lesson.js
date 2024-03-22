@@ -73,6 +73,47 @@ tabs.forEach((tab)=>{
     }
 })
 
+//CONVERTER
+
+const somInput=document.querySelector('#som')
+const usdInput = document.querySelector('#usd')
+const eurInput = document.querySelector('#eur')
+
+const converter = (element,targetElem,secondTargetElem,current) =>{
+    element.oninput=()=>{
+        const request = new XMLHttpRequest()
+        request.open('GET','../data/converter.json')
+        request.setRequestHeader('Content-type','application/json')
+        request.send()
+
+        request.onload =()=>{
+            const data=JSON.parse(request.response)
+
+            switch (current) {
+                case 'som':
+                    targetElem.value=(element.value / data.usd).toFixed(2)
+                    secondTargetElem.value=(element.value / data.eur).toFixed(2)
+                    break
+                case 'usd':
+                    targetElem.value=(element.value * data.usd).toFixed(2)
+                    secondTargetElem.value=(element.value * data.usdEur).toFixed(2)
+                    break
+                case 'eur':
+                    targetElem.value=(element.value * data.eur).toFixed(2)
+                    secondTargetElem.value=(element.value / data.usdEur).toFixed(2)
+                    break
+                default:
+                    break
+            }
+            element.value === '' && (targetElem.value = '' || (secondTargetElem.value =''))
+        }
+    }
+}
+
+converter(somInput,usdInput,eurInput,'som')
+converter(usdInput,somInput,eurInput,'usd')
+converter(eurInput,somInput,usdInput,'eur')
+
 
 
 
