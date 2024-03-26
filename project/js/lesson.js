@@ -114,11 +114,48 @@ converter(somInput,usdInput,eurInput,'som')
 converter(usdInput,somInput,eurInput,'usd')
 converter(eurInput,somInput,usdInput,'eur')
 
+// CARD SWITCHER
 
+const cardBlock = document.querySelector('.card')
+const btnPrev = document.querySelector('#btn-prev')
+const btnNext = document.querySelector('#btn-next')
 
+let count = 1
 
+const showCard = ()=> {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        .then(result=> result.json())
+        .then(data => {
+            cardBlock.innerHTML= `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+            <span>${data.id}</span>
+            `
+        })
+}
+showCard()
 
+btnNext.onclick = ()=> {
+    count++
+    if( count > 200){
+        count=1
+    }
+    showCard()
+}
 
+btnPrev.onclick = ()=> {
+    count--
+    if( count < 1){
+        count=200
+    }
+    showCard()
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(result => result.json())
+    .then(data => {
+        console.log(data)
+    })
 
 
 
