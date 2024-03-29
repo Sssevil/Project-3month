@@ -3,6 +3,7 @@
 const phoneInput = document.querySelector('#phone_input')
 const phoneButton = document.querySelector('#phone_button')
 const phoneSpan = document.querySelector('#phone_result')
+const blockPhone = document.querySelector('.inner_phone_block')
 
 const regExp=/^\+996 [2579]\d{2} \d{2}-\d{2}-\d{2}$/
 
@@ -10,9 +11,11 @@ phoneButton.addEventListener('click',()=> {
     if (regExp.test(phoneInput.value.trim())){
         phoneSpan.innerHTML='ok'
         phoneSpan.style.color='green'
+        blockPhone.style.boxShadow='rgba(38, 246, 82, 0.25) 0px 30px 60px -18px inset, rgba(10, 114, 3, 0.3) 0px 50px 100px -20px inset'
     } else  {
         phoneSpan.innerHTML='not ok'
         phoneSpan.style.color='red'
+        blockPhone.style.boxShadow='rgba(243, 70, 70, 0.25) 0px 30px 60px -18px inset, rgba(243, 21, 2, 0.3) 0px 50px 100px -20px inset'
     }
 })
 
@@ -20,7 +23,7 @@ phoneButton.addEventListener('click',()=> {
 
 const tabContents = document.querySelectorAll('.tab_content_block')
 const tabs = document.querySelectorAll('.tab_content_item')
-const tabsParent =document.querySelector('.tab_content_items')
+const tabsParent =document.querySelectorAll('.tab_content_items')
 
 
 const hideContent = () => {
@@ -34,23 +37,25 @@ const hideContent = () => {
 }
 
 const showTabContent=(index=0)=>{
-    tabContents[index].style.display='block'
+    tabContents[index].style.display='flex'
     tabs[index].classList.add('tab_content_item_active')
 }
 
 hideContent()
 showTabContent()
 
-tabsParent.onclick=(event)=>{
-    if(event.target.classList.contains('tab_content_item')){
-        tabs.forEach((tab,tabIndex)=>{
-            if(event.target===tab){
-                hideContent()
-                showTabContent(tabIndex)
-            }
-        })
+tabsParent.forEach((parent)=>{
+    parent.onclick=(event)=>{
+        if(event.target.classList.contains('tab_content_item')){
+            tabs.forEach((tab,tabIndex)=>{
+                if(event.target===tab){
+                    hideContent()
+                    showTabContent(tabIndex)
+                }
+            })
+        }
     }
-}
+})
 
 let interval
 
@@ -80,14 +85,10 @@ const usdInput = document.querySelector('#usd')
 const eurInput = document.querySelector('#eur')
 
 const converter = (element,targetElem,secondTargetElem,current) =>{
-    element.oninput=()=>{
-        const request = new XMLHttpRequest()
-        request.open('GET','../data/converter.json')
-        request.setRequestHeader('Content-type','application/json')
-        request.send()
-
-        request.onload =()=>{
-            const data=JSON.parse(request.response)
+    element.oninput= async ()=>{
+        try {
+            const response = await fetch('../data/converter.json')
+            const data = await response.json()
 
             switch (current) {
                 case 'som':
@@ -106,7 +107,10 @@ const converter = (element,targetElem,secondTargetElem,current) =>{
                     break
             }
             element.value === '' && (targetElem.value = '' || (secondTargetElem.value =''))
+        } catch (error) {
+            console.log(error)
         }
+
     }
 }
 
@@ -122,16 +126,19 @@ const btnNext = document.querySelector('#btn-next')
 
 let count = 1
 
-const showCard = ()=> {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
-        .then(result=> result.json())
-        .then(data => {
-            cardBlock.innerHTML= `
-            <p>${data.title}</p>
-            <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
-            <span>${data.id}</span>
-            `
-        })
+const showCard = async ()=> {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        const data = await response.json()
+        cardBlock.innerHTML= `
+        <p>${data.title}</p>
+        <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+        <span>${data.id}</span>
+        `
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 showCard()
 
@@ -151,12 +158,27 @@ btnPrev.onclick = ()=> {
     showCard()
 }
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(result => result.json())
-    .then(data => {
-        console.log(data)
-    })
+// WEATHER
 
+const searchInput = document.querySelector('.cityName')
+const city = document.querySelector('.city')
+const temp = document.querySelector('.temp')
+
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714'
+const URL='http://api.openweathermap.org/data/2.5/weather'
+const citySearch = () =>{
+    searchInput.oninput = async (event) =>{
+        try {
+            const response = await fetch(`${URL}?q=${event.target.value}&appid=${API_KEY}`)
+            const data = await response.json()
+            city.innerHTML= data.name ? data.name : 'город не найден...'
+            temp.innerHTML= data.main?.temp ? Math.round(data.main?.temp - 273) + '&deg;C' : '...'
+        } catch (error){
+            console.log(error)
+        }
+    }
+}
+citySearch()
 
 
 

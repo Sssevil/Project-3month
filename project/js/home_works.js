@@ -3,6 +3,7 @@
 const gmailInput=document.querySelector('#gmail_input')
 const gmailButton= document.querySelector('#gmail_button')
 const gmailResult = document.querySelector('#gmail_result')
+const gmailBlock = document.querySelector('.form_gmail')
 
 const regExp=/^[a-zA-Z0-9._-]{3,}@gmail\.com$/
 
@@ -10,9 +11,11 @@ gmailButton.addEventListener('click',()=> {
     if (regExp.test(gmailInput.value.trim())){
         gmailResult.innerHTML='Почта валидна'
         gmailResult.style.color='green'
+        gmailBlock.style.boxShadow='rgba(121, 210, 118, 0.25) 0 50px 100px -20px, rgba(57, 238, 43, 0.87) 0 30px 60px -30px, rgba(25, 64, 10, 0.35) 0 -2px 6px 0 inset'
     } else  {
         gmailResult.innerHTML='Почта не валидна'
         gmailResult.style.color='red'
+        gmailBlock.style.boxShadow='rgba(238, 25, 32, 0.25) 0 50px 100px -20px, rgba(243, 6, 41, 0.87) 0 30px 60px -30px, rgba(190, 2, 30, 0.35) 0 -2px 6px 0 inset'
     }
 
 })

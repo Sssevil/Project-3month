@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f046a5d-b8aa-4420-bba8-be11648a6e77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/css/cards.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/images/js-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/js/cards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/pages/cards.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/css/core.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/css/core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/css/home_works.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/css/home_works.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/js/lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/js/lesson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/js/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pages/home_works.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/pages/home_works.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pages/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/pages/lessons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pages/monster.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/pages/monster.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,19 +46,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zhunu\Desktop\js-dz-3\project\images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +77,12 @@
       <workItem from="1711121595139" duration="1634000" />
       <workItem from="1711191695928" duration="31000" />
       <workItem from="1711455422542" duration="262000" />
+      <workItem from="1711455750204" duration="3717000" />
+      <workItem from="1711462324885" duration="24000" />
+      <workItem from="1711469503232" duration="898000" />
+      <workItem from="1711560092646" duration="13525000" />
+      <workItem from="1711638086488" duration="24726000" />
+      <workItem from="1711705599552" duration="16063000" />
     </task>
     <servers />
   </component>

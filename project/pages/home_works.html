@@ -28,6 +28,9 @@
                     <li class="menu_link">
                         <a href="https://t.me/NurDinBuy16" target="_blank">Send hw</a>
                     </li>
+                    <li class="menu_link">
+                        <a href="../pages/cards.html">Cards</a>
+                    </li>
                 </ul>
                 <button class="btn" id="btn-get">Click me!</button>
             </div>
@@ -36,13 +39,20 @@
 
     <div class="gmail_block">
         <div class="container">
-            <h3>Home work 1 (part 1)</h3>
             <div class="inner_gmail_block">
-                <div class="form_gmail">
-                    <label for="gmail_input"></label>
-                    <input type="text" id="gmail_input" placeholder="your gmail">
-                    <button class="btn" id="gmail_button">Check gmail</button>
-                    <span class="checker" id="gmail_result"></span>
+                <div class="gmail_heading">
+                    <h2><strong>Регулярные выражения</strong> <br> С чем ее едят?</h2>
+                    <p>Регулярные выражения — это специальные комбинации символов для поиска и обработки текста. Механика у них простая: вы составляете шаблон слова, которое вам нужно, а программа находит все строки с этим словом.</p>
+                    <p>Пример регулярного выражения : <br> /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm</p>
+                </div>
+                <div class="gmail_form_box">
+                    <h3>Проверь свою почту</h3>
+                    <div class="form_gmail">
+                        <label for="gmail_input"></label>
+                        <input type="text" id="gmail_input" placeholder="your gmail">
+                        <button class="btn" id="gmail_button">Check gmail</button>
+                        <span class="checker" id="gmail_result"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,10 +60,10 @@
 
     <div class="move_block">
         <div class="container">
-            <h3>Home work 1 (part 2)</h3>
+            <h3>Бесконечное счастье &rarr; &#128512; </h3>
             <div class="inner_move_block">
                 <div class="parent_block">
-                    <div class="child_block"></div>
+                    <div class="child_block">&#128518;</div>
                 </div>
             </div>
         </div>
@@ -61,16 +71,18 @@
 
     <div class="stopwatch">
         <div class="container">
-            <h3>Home work 2 </h3>
-            <div class="time">
-                <div class="time_block">
-                    <div class="interval" id="seconds">0</div>
+            <h3> тик-так тик-так </h3>
+            <div class="inner_stopwatch">
+                <div class="time">
+                    <div class="time_block">
+                        <div class="interval" id="seconds">0</div>
+                    </div>
                 </div>
-            </div>
-            <div class="time_buttons">
-                <button class="btn" id="start">Start</button>
-                <button class="btn" id="stop">Stop</button>
-                <button class="btn" id="reset">Reset</button>
+                <div class="time_buttons">
+                    <button class="btn_watch" id="start">Start</button>
+                    <button class="btn_watch stop" id="stop">Stop</button>
+                    <button class="btn_watch reset" id="reset">Reset</button>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +103,7 @@
         <div class="modal_content">
             <form action="#">
                 <div class="modal_close">&times;</div>
-                <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
+                <div class="modal_title">Оставьте ваши данные</div>
                 <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
                 <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>

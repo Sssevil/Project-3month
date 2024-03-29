@@ -28,6 +28,9 @@
                     <li class="menu_link">
                         <a href="https://t.me/NurDinBuy16" target="_blank">Send hw</a>
                     </li>
+                    <li class="menu_link">
+                        <a href="../pages/cards.html">Cards</a>
+                    </li>
                 </ul>
                 <button class="btn" id="btn-get">Click me!</button>
             </div>
@@ -50,10 +53,14 @@
 
     <div class="tab_slider">
         <div class="container">
-            <h3>tab slider</h3>
+            <h3>Полезная информация</h3>
             <div class="inner_tab_slider">
                 <div class="tab_contents_block">
-
+                    <div class="tab_content_items">
+                        <div class="tab_content_item tab_content_item_active">Делегирование событий</div>
+                        <div class="tab_content_item">Class List</div>
+                        <div class="tab_content_item">add()</div>
+                    </div>
                     <div class="tab_content_block">
                         <h4>Делегирование событий</h4>
                         <p>В JavaScript делегирование событий - это когда мы используем один обработчик событий для
@@ -86,15 +93,15 @@
                             element.classList.contains('highlight') вернет true, если у элемента есть класс
                             "highlight".</p>
                     </div>
-
+                    <div class="tab_content_block">
+                        <h4>forEach()</h4>
+                        <p>Метод forEach позволяет последовательно перебрать все элементы массива. Метод в параметре получает функцию, которая выполнится для каждого элемента массива.</p>
+                    </div>
                     <div class="tab_content_items">
-                        <div class="tab_content_item tab_content_item_active">Делегирование событий</div>
-                        <div class="tab_content_item">Class List</div>
-                        <div class="tab_content_item">add()</div>
                         <div class="tab_content_item">remove()</div>
                         <div class="tab_content_item">contains()</div>
+                        <div class="tab_content_item">foreach()</div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -102,19 +109,32 @@
 
     <div class="converter">
         <div class="container">
-            <h3>CONVERTER</h3>
-            <div class="inner_converter">
-                <div class="som">
-                    <label for="som">Som</label>
-                    <input type="number" id="som">
+            <h3>Любой каприз за ваши деньги!</h3>
+            <div class="converter_box">
+                <div class="converter_info">
+                    <div>
+                        <img src="../images/salary.jpg" alt="image">
+                    </div>
+                    <div class="salary_front">
+                        <div><p>Junior <br>200$-500$</p></div>
+                        <div><p>Middle <br>500$-1000$</p></div>
+                        <div><p>Senior <br>1000$-3000$</p></div>
+                    </div>
                 </div>
-                <div class="usd">
-                    <label for="usd">Usd</label>
-                    <input type="number" id="usd">
-                </div>
-                <div class="eur">
-                    <label for="eur">Eur</label>
-                    <input type="number" id="eur">
+                <div class="inner_converter">
+                    <h5>Converter</h5>
+                    <div class="som">
+                        <label for="som">Som</label>
+                        <input type="number" id="som">
+                    </div>
+                    <div class="usd">
+                        <label for="usd">Usd</label>
+                        <input type="number" id="usd">
+                    </div>
+                    <div class="eur">
+                        <label for="eur">Eur</label>
+                        <input type="number" id="eur">
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,25 +144,27 @@
         <div class="container">
             <h3>Card Switcher</h3>
             <div class="inner_card_switcher">
-                <button class="btn" id="btn-prev">prev</button>
+                <button class="btn btn_switcher" id="btn-prev">&laquo;&laquo;</button>
                 <div class="card"></div>
-                <button class="btn" id="btn-next">next</button>
+                <button class="btn btn_switcher" id="btn-next">&raquo;&raquo;</button>
             </div>
         </div>
     </div>
 
     <div class="weather">
         <div class="container">
-            <h3>WEATHER</h3>
+            <h3>Прогноз погоды</h3>
             <div class="inner_weather">
-                <div>
-                    <input type="text" class="cityName" placeholder="Найти погоду в...">
-                </div>
-                <div>
-                    <span class="city"></span>
-                    <hr>
-                    <span class="temp"></span>
-                </div>
+               <div class="weather_box">
+                   <div>
+                       <input type="text" class="cityName" placeholder="Найти погоду в...">
+                   </div>
+                   <div>
+                       <span class="city"></span>
+                       <hr>
+                       <span class="temp"></span>
+                   </div>
+               </div>
             </div>
         </div>
     </div>
@@ -163,7 +185,7 @@
         <div class="modal_content">
             <form action="#">
                 <div class="modal_close">&times;</div>
-                <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
+                <div class="modal_title">Оставьте ваши данные</div>
                 <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
                 <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>
