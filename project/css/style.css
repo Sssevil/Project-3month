@@ -308,6 +308,12 @@
     font-size: 16px !important;
     border: 2px solid transparent !important;
     background: green !important;
+    transition: 1000ms 100ms;
+}
+
+.btn_min:hover {
+    background: white !important;
+    color: #0c0d11;
 }
 
 
